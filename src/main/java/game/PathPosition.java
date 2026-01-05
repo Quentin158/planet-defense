@@ -1,6 +1,6 @@
-package game;
+package game ;
 
-import java.util.List;
+import java.util.List ;
 
 /**
  * A PathPosition object represents a single position along a segmented path.

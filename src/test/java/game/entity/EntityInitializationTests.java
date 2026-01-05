@@ -43,6 +43,17 @@ public class EntityInitializationTests
   }
 
   @Test
+  public void testingBlackHoleInitialization() {
+    Coordinate point = new Coordinate(0, 0) ;
+
+    BlackHole blackHole = new BlackHole(point) ;
+
+    assertEquals(point, blackHole.position) ;
+    assertEquals(-40, blackHole.anchorX) ;
+    assertEquals(-40, blackHole.anchorY) ;
+  }
+
+  @Test
   public void testingCometInitialization() {
     List<Coordinate> points = new ArrayList<>() ;
     points.add(new Coordinate(0, 0)) ;
@@ -55,5 +66,16 @@ public class EntityInitializationTests
     assertEquals(-25, comet.anchorX) ;
     assertEquals(-25, comet.anchorY) ;
     assertEquals(8, comet.velocity) ;
+  }
+
+  @Test
+  public void testingSunInitialization() {
+    Coordinate point = new Coordinate(0, 0) ;
+
+    Sun sun = new Sun(point) ;
+
+    assertEquals(point, sun.position) ;
+    assertEquals(-50, sun.anchorX) ;
+    assertEquals(-50, sun.anchorY) ;
   }
 }

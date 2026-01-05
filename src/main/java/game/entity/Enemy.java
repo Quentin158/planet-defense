@@ -9,19 +9,16 @@ import game.PathPosition ;
 /**
  * This is an abstract superclass for an enemy in the game
  */
-public abstract class Enemy 
+public abstract class Enemy extends Entity
 {
 	/* instance variables */
 	protected PathPosition position ;	// holds current position of enemy
 	protected Image enemy ;						// holds image of enemy
-	protected int anchorX ;						// shifts position on x axis
-	protected int anchorY ;						// shifts position on y axis
 	protected double velocity ; 			// increases or decreases advance speed
 
 	public Enemy(PathPosition position, int anchorX, int anchorY, double velocity) {
+		super(anchorX, anchorY) ;
 		this.position = position ;
-		this.anchorX = anchorX ;
-		this.anchorY = anchorY ;
 		this.velocity = velocity ;
 	}
 
