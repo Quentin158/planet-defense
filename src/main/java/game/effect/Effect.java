@@ -1,9 +1,12 @@
-package game;
+package game.effect ;
 
-import java.awt.Graphics;
-import java.awt.Image;
-import java.util.LinkedList;
-import java.util.List;
+import java.awt.Graphics ;
+import java.awt.Image ;
+import java.util.LinkedList ;
+import java.util.List ;
+
+import game.Game ;
+import game.entity.Enemy ;
 
 /**
  * Abstract class which all Effects will inherit from
@@ -16,8 +19,7 @@ abstract public class Effect
 	protected double ageInSeconds;
 	protected Image picture;
 	
-	public void interact(Game game, double deltaTime)
-	{
+	public void interact(Game game, double deltaTime) {
 		// Increments time
 		ageInSeconds += deltaTime;
 		
@@ -33,8 +35,8 @@ abstract public class Effect
 			double dx, dy, dist;	// change in x, y, and total distance
 			
 			// calculates change in x and y position 
-			dx = e.position.getCoordinate().x - posX; // x position of enemy - effect 
-			dy = e.position.getCoordinate().y - posY; // y position of enemy - effect 
+			dx = e.getPosition().getCoordinate().x - posX ; // x position of enemy - effect 
+			dy = e.getPosition().getCoordinate().y - posY ; // y position of enemy - effect 
 			
 			// use Pythagorean theorem to calculate distance
 			dist = Math.sqrt((dx*dx) + (dy*dy));

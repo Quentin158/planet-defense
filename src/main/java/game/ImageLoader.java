@@ -1,12 +1,12 @@
-package game;
+package game ;
 
-import java.awt.Image;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
-import java.util.TreeMap;
+import java.awt.Image ;
+import java.io.IOException ;
+import java.io.InputStream ;
+import java.util.Map ;
+import java.util.TreeMap ;
 
-import javax.imageio.ImageIO;
+import javax.imageio.ImageIO ;
 
 public class ImageLoader 
 {
@@ -28,8 +28,7 @@ public class ImageLoader
 	 * @param null
 	 * @return image loader
 	 */
-	static ImageLoader getLoader()
-	{	
+	public static ImageLoader getLoader() {	
 		if(instance == null)
 			instance = new ImageLoader();
 		return instance;	// gets the image loader object
@@ -40,8 +39,7 @@ public class ImageLoader
 	 * @param pic
 	 * @return Image
 	 */
-	public Image getImage(String pic)
-	{	
+	public Image getImage(String pic) {	
 		// Prevents and image from being loaded twice
 		if (imageBank.containsKey(pic))	// if image is already in the map	
 			return imageBank.get(pic) ;	// return that image

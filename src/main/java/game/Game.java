@@ -8,6 +8,15 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import game.effect.Effect;
+import game.entity.Alien;
+import game.entity.Asteroid;
+import game.entity.BlackHole;
+import game.entity.Comet;
+import game.entity.Enemy;
+import game.entity.Sun;
+import game.entity.Tower;
+
 /* The class begins below the enum. */
 
 /**
@@ -74,18 +83,18 @@ public class Game implements Runnable
     private boolean gameIsOver;			// indicates if game is lost
     private boolean gameIsWon;			// indicates if game is won
     
-    int livesCounter; 					// counter for lives left
-    int scoreCounter;					// points the user earns
-    int killsCounter;					// number of enemies destroyed
+    public int livesCounter; 			// counter for lives left
+    public int scoreCounter;			// points the user earns
+    public int killsCounter;			// number of enemies destroyed
     
     /* create enemies */
-    List<Enemy> enemies;				// list of enemy objects
+    public List<Enemy> enemies;			// list of enemy objects
     
     /* create towers */
-    List<Tower> towers;					// list of tower objects
+    public List<Tower> towers;			// list of tower objects
     
     /* create effects */
-    List<Effect> effects;				// list of effect objects
+    public List<Effect> effects;		// list of effect objects
     
     // You will declare other variables here.  These variables will last for
     //   the lifetime of the game, so don't store temporary values or loop counters

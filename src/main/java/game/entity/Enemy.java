@@ -1,7 +1,10 @@
-package game;
+package game.entity;
 
 import java.awt.Graphics;
 import java.awt.Image;
+
+import game.Coordinate;
+import game.PathPosition;
 
 /**
  * This is an abstract superclass for an enemy in the game
@@ -19,8 +22,7 @@ abstract public class Enemy
 	 * Advances the position of the enemy
 	 * 
 	 */
-	public void advance()
-	{
+	public void advance() {
 		position.advance(10 + velocity);	// advances position 10 units plus velocity
 	}
 	
@@ -29,8 +31,7 @@ abstract public class Enemy
 	 * 
 	 * @param g
 	 */
-	public void draw(Graphics g)
-	{
+	public void draw(Graphics g) {
 		// Draws Enemy object
 		Coordinate c = position.getCoordinate();
 		g.drawImage(enemy, c.x + anchorX, c.y + anchorY, null);
@@ -44,9 +45,7 @@ abstract public class Enemy
 	 * 
 	 * @return
 	 */
-	public PathPosition getPosition()
-	{
+	public PathPosition getPosition() {
 		return position;
-	}
-	
+	}	
 }

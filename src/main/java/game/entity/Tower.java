@@ -1,7 +1,10 @@
-package game;
+package game.entity;
 
 import java.awt.Graphics;
 import java.awt.Image;
+
+import game.Coordinate;
+import game.Game;
 
 /**
  * This is an abstract superclass for a tower in the game
@@ -33,10 +36,5 @@ abstract public class Tower
 		position = c;
 	}
 	
-	abstract void interact(Game game, double deltaTime);
+	public abstract void interact(Game game, double deltaTime);
 }
-
-
-
-
-
