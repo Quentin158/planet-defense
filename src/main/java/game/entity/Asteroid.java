@@ -1,6 +1,5 @@
 package game.entity ;
 
-import game.ImageLoader ;
 import game.PathPosition ;
 
 /**
@@ -12,7 +11,6 @@ public class Asteroid extends Enemy
 	 * Constructor
 	 */
 	public Asteroid(PathPosition position) {
-		super(position, -20, -20, 2) ;
-		this.enemy = ImageLoader.getLoader().getImage("asteroid.png") ;
+		super("asteroid.png", position, -20, -20, 2) ;
 	}
 }

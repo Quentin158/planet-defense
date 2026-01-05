@@ -4,7 +4,6 @@ import java.util.List ;
 
 import game.Coordinate ;
 import game.Game ;
-import game.ImageLoader ;
 import game.effect.StarDust ;
 
 /**
@@ -16,8 +15,7 @@ public class BlackHole extends Tower
 	 * Constructor
 	 */
 	public BlackHole(Coordinate position) {
-		super(position, -40, -40) ;
-		this.tower = ImageLoader.getLoader().getImage("blackhole.png") ;
+		super("blackhole.png", position, -40, -40) ;
 	}
 	
 	/**

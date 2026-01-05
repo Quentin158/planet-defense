@@ -1,7 +1,6 @@
 package game.entity ;
 
 import java.awt.Graphics ;
-import java.awt.Image ;
 
 import game.Coordinate ;
 import game.PathPosition ;
@@ -9,15 +8,14 @@ import game.PathPosition ;
 /**
  * This is an abstract superclass for an enemy in the game
  */
-public abstract class Enemy extends Entity
+public abstract class Enemy extends AbstractEntity
 {
 	/* instance variables */
 	protected PathPosition position ;	// holds current position of enemy
-	protected Image enemy ;						// holds image of enemy
 	protected double velocity ; 			// increases or decreases advance speed
 
-	public Enemy(PathPosition position, int anchorX, int anchorY, double velocity) {
-		super(anchorX, anchorY) ;
+	public Enemy(String imageName, PathPosition position, int anchorX, int anchorY, double velocity) {
+		super(imageName, anchorX, anchorY) ;
 		this.position = position ;
 		this.velocity = velocity ;
 	}
@@ -41,10 +39,11 @@ public abstract class Enemy extends Entity
 	 * Draws the enemy to the screen.
 	 * @param g Graphics
 	 */
+	@Override
 	public void draw(Graphics g) {
 		// Draws Enemy object
 		Coordinate c = position.getCoordinate() ;
-		g.drawImage(enemy, c.x + anchorX, c.y + anchorY, null) ;
+		g.drawImage(this.image, c.x + anchorX, c.y + anchorY, null) ;
 		
 		// Draws dot on Enemy's (x, y) coordinates
 		//g.setColor(Color.WHITE);

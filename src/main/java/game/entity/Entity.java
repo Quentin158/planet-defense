@@ -1,12 +1,8 @@
 package game.entity ;
 
-public abstract class Entity
-{
-  protected int anchorX ;
-	protected int anchorY ;
+import java.awt.Graphics ;
 
-  public Entity(int anchorX, int anchorY) {
-    this.anchorX = anchorX ;
-    this.anchorY = anchorY ;
-  }
+public interface Entity
+{
+  void draw(Graphics g) ;
 }

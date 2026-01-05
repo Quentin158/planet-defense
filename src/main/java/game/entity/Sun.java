@@ -4,7 +4,6 @@ import java.util.List ;
 
 import game.Coordinate ;
 import game.Game ;
-import game.ImageLoader ;
 import game.effect.SunSpot ;
 
 /**
@@ -16,8 +15,7 @@ public class Sun extends Tower
 	 * Constructor
 	 */
 	public Sun(Coordinate position) {
-		super(position, -50, -50) ;
-		this.tower = ImageLoader.getLoader().getImage("sun.png") ;
+		super("sun.png", position, -50, -50) ;
 	}
 
 	/**
