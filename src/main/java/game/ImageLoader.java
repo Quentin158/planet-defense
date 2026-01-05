@@ -12,6 +12,7 @@ public class ImageLoader
 {
 	private Map<String, Image> imageBank;	//declares a map to hold images
 	private static ImageLoader instance;
+	
 	/**
 	 *  Constructor to initialize imageBank variable
 	 *  

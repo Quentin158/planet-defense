@@ -12,11 +12,7 @@ public class Alien extends Enemy
 	 * Constructor
 	 */
 	public Alien(PathPosition p) {
-		ImageLoader loader = ImageLoader.getLoader() ;
-		this.enemy = loader.getImage("Alien-Ship.png") ;
-		this.position = p ;
-		this.anchorX = -20 ;
-		this.anchorY = -20 ;
-		this.velocity = 6 ;
+		super(p, -20, -20, 6) ;
+		this.enemy = ImageLoader.getLoader().getImage("Alien-Ship.png") ;
 	}
 }

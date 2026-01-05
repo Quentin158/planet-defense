@@ -11,12 +11,8 @@ public class Asteroid extends Enemy
 	/**
 	 * Constructor
 	 */
-	public Asteroid(PathPosition p) {
-		ImageLoader loader = ImageLoader.getLoader() ;
-		this.enemy = loader.getImage("asteroid.png") ;
-		this.position = p ;
-		this.anchorX = -20 ;
-		this.anchorY = -20 ;
-		this.velocity = 2 ;
+	public Asteroid(PathPosition position) {
+		super(position, -20, -20, 2) ;
+		this.enemy = ImageLoader.getLoader().getImage("asteroid.png") ;
 	}
 }

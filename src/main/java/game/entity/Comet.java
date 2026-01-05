@@ -11,12 +11,8 @@ public class Comet extends Enemy
 	/**
 	 * Constructor
 	 */
-	public Comet(PathPosition p) {
-		ImageLoader loader = ImageLoader.getLoader() ;
-		this.enemy = loader.getImage("comet.png") ;
-		this.position = p ;
-		this.anchorX = -25 ;
-		this.anchorY = -25 ;
-		this.velocity = 8 ;
+	public Comet(PathPosition position) {
+		super(position, -25, -25, 8) ;
+		this.enemy = ImageLoader.getLoader().getImage("comet.png") ;
 	}
 }

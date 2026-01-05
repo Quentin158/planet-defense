@@ -18,6 +18,21 @@ public abstract class Enemy
 	protected int anchorY ;						// shifts position on y axis
 	protected double velocity ; 			// increases or decreases advance speed
 
+	public Enemy(PathPosition position, int anchorX, int anchorY, double velocity) {
+		this.position = position ;
+		this.anchorX = anchorX ;
+		this.anchorY = anchorY ;
+		this.velocity = velocity ;
+	}
+
+	/**
+	 * Gives the position of the entity.
+	 * @return a {@code PathPosition} object
+	 */
+	public PathPosition getPosition() {
+		return position ;
+	}
+
 	/**
 	 * Advances the position of the enemy.
 	 */
@@ -38,12 +53,4 @@ public abstract class Enemy
 		//g.setColor(Color.WHITE);
 		//g.fillOval(c.x, c.y, 5, 5);
 	}
-	
-	/**
-	 * Gives the position of the entity.
-	 * @return a {@code PathPosition} object
-	 */
-	public PathPosition getPosition() {
-		return position ;
-	}	
 }
