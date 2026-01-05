@@ -1,40 +1,38 @@
-package game.entity;
+package game.entity ;
 
-import java.awt.Graphics;
-import java.awt.Image;
+import java.awt.Graphics ;
+import java.awt.Image ;
 
-import game.Coordinate;
-import game.PathPosition;
+import game.Coordinate ;
+import game.PathPosition ;
 
 /**
  * This is an abstract superclass for an enemy in the game
  */
-abstract public class Enemy 
+public abstract class Enemy 
 {
 	/* instance variables */
-	protected PathPosition position;	// holds current position of enemy
-	protected Image enemy;				// holds image of enemy
-	protected int anchorX;				// shifts position on x axis
-	protected int anchorY;				// shifts position on y axis
-	protected double velocity; 			// increases or decreases advance speed
+	protected PathPosition position ;	// holds current position of enemy
+	protected Image enemy ;						// holds image of enemy
+	protected int anchorX ;						// shifts position on x axis
+	protected int anchorY ;						// shifts position on y axis
+	protected double velocity ; 			// increases or decreases advance speed
 
 	/**
-	 * Advances the position of the enemy
-	 * 
+	 * Advances the position of the enemy.
 	 */
 	public void advance() {
-		position.advance(10 + velocity);	// advances position 10 units plus velocity
+		position.advance(10 + velocity) ;	// advances position 10 units plus velocity
 	}
 	
 	/**
-	 * Draws the enemy to the screen
-	 * 
-	 * @param g
+	 * Draws the enemy to the screen.
+	 * @param g Graphics
 	 */
 	public void draw(Graphics g) {
 		// Draws Enemy object
-		Coordinate c = position.getCoordinate();
-		g.drawImage(enemy, c.x + anchorX, c.y + anchorY, null);
+		Coordinate c = position.getCoordinate() ;
+		g.drawImage(enemy, c.x + anchorX, c.y + anchorY, null) ;
 		
 		// Draws dot on Enemy's (x, y) coordinates
 		//g.setColor(Color.WHITE);
@@ -42,10 +40,10 @@ abstract public class Enemy
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Gives the position of the entity.
+	 * @return a {@code PathPosition} object
 	 */
 	public PathPosition getPosition() {
-		return position;
+		return position ;
 	}	
 }

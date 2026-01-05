@@ -21,9 +21,7 @@ public class PathPosition
 	 * 
 	 * @param path
 	 */
-	PathPosition(List<Coordinate> points)
-	{	// Initializes variables
-		
+	public PathPosition(List<Coordinate> points) {	// Initializes variables
 		this.segment = 0;		//starting segment
 		this.percentage = 0;	//starting percentage across segment
 		this.path = points;		// stores list of coordinate points in path
