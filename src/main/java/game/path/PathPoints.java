@@ -33,7 +33,7 @@ public class PathPoints extends AbstractPath
 			// builds coordinate object
 			Coordinate c = new Coordinate(s.nextInt(), s.nextInt());	
 			path.add(c);	// adds coordinate object to path list
-		}	
+		}
 	}
 	
 	/**

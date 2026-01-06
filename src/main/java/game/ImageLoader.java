@@ -58,7 +58,7 @@ public class ImageLoader
         imageBank.put(pic, img) ;
         return img ;
 			} catch (IOException e) {
-				throw new RuntimeException("Erreur lors du chargement de " + pic, e) ;
+				throw new RuntimeException("Erreur lors du chargement de "+pic, e) ;
 			}
 		}
 	}

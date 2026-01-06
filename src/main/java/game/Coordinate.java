@@ -7,47 +7,39 @@ package game;
 */
 public class Coordinate
 {
-    // Every object will have an x, y integer.
-	
-	public int x, y;
+  // Every object will have an x, y integer.
+	public int x, y ;
 	
 	/**
     * Constructor - initializes this object with the provided coordinates.
     * Since the fields are final, they won't be able to be changed
-    * after they are first assigned (below)
-    * 
+    * after they are first assigned (below).
     * @param x
     * @param y
     */
-	public Coordinate(int x, int y)
-	{
-		this.x = x;
-		this.y = y;
+	public Coordinate(int x, int y) {
+		this.x = x ;
+		this.y = y ;
 	}
 
 	/**
-	 * Get X coordinate
-	 * 
+	 * Get X coordinate.
 	 * @return X coordinate
 	 */
-	public int getX()
-	{
-		return this.x; 
+	public int getX() {
+		return this.x ;
 	}
 	
 	/**
-	 * Get Y coordinate
-	 * 
+	 * Get Y coordinate.
 	 * @return Y coordinate
 	 */
-	public int getY()
-	{
-		return this.y; 
+	public int getY() {
+		return this.y ;
 	}
 	
-	public String toString()
-	{
-		return ("" + x + " " + y);
+	@Override
+	public String toString() {
+		return ("" + x + " " + y) ;
 	}
-
 }
