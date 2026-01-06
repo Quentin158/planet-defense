@@ -6,9 +6,9 @@ import game.Coordinate ;
 
 public abstract class AbstractPath implements Path
 {
-  protected List <Coordinate> path ;
+  protected List<Coordinate> path ;
 
-  public AbstractPath() {
-    
+  public AbstractPath(List<Coordinate> path) {
+    this.path = path ;
   }
 }

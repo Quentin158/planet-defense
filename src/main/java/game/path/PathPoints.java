@@ -1,10 +1,10 @@
-package game.path;
+package game.path ;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.*;
+import java.awt.Color ;
+import java.awt.Graphics ;
+import java.util.* ;
 
-import game.Coordinate;
+import game.Coordinate ;
 
 /**
  * /**
@@ -23,17 +23,18 @@ public class PathPoints extends AbstractPath
     *         coordinate object, and adding the coordinate object to the path list.    * 
     * @param s  a Scanner set up by the caller to scan through a list of coordinates
     */
-	public PathPoints(Scanner s)
-	{	
-		path = new ArrayList<Coordinate>();		// creates new ArrayList of Coordinates
-		int counter = s.nextInt(); 				// reads number of coordinates c
-		
-		for(int n = 0; n < counter; n++)		// loops n times
-		{	
-			// builds coordinate object
-			Coordinate c = new Coordinate(s.nextInt(), s.nextInt());	
-			path.add(c);	// adds coordinate object to path list
+	public PathPoints(Scanner s) {
+		super(buildPath(s)) ;
+	}
+
+	private static List<Coordinate> buildPath(Scanner s) {
+		List<Coordinate> path = new ArrayList<Coordinate>() ;
+		int counter = s.nextInt() ;
+		for (int n = 0 ; n < counter ; n++) {	
+			Coordinate c = new Coordinate(s.nextInt(), s.nextInt()) ;
+			path.add(c) ;
 		}
+		return path ;
 	}
 	
 	/**
