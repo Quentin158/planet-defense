@@ -8,7 +8,7 @@ import java.util.List ;
 import org.junit.jupiter.api.Test ;
 
 import game.Coordinate ;
-import game.path.PathPosition;
+import game.path.PathPosition ;
 
 public class EntityInitializationTests
 {
