@@ -1,8 +1,10 @@
-package game;
+package game.path;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.*;
+
+import game.Coordinate;
 
 /**
  * /**
@@ -11,11 +13,8 @@ import java.util.*;
  * drawing the path, and for creating coordinates at the start of a path.
  * It serves no other purpose.
  */
-public class PathPoints 
-{
-	// Each PathPoints object will have a list of coordinates:
-	private List <Coordinate> path;
-	
+public class PathPoints extends AbstractPath
+{	
 	/** This constructor does the following:
     *     - It creates a new ArrayList to hold the path coordinates,
     *          and stores it in the path variable.

@@ -1,6 +1,8 @@
-package game ;
+package game.path ;
 
 import java.util.List ;
+
+import game.Coordinate;
 
 /**
  * A PathPosition object represents a single position along a segmented path.
@@ -9,12 +11,11 @@ import java.util.List ;
  * Has three components that make up the position: the path that the object is on, the segment
  * that the object is in, and the percentage across that segment.
  */
-public class PathPosition
+public class PathPosition extends AbstractPath
 {	
 	// Instance variables
 	private int segment;			// The segment this position is on
 	private double percentage;		// Distance along the current segment
-	private List <Coordinate> path;	// List of path coordinates for current path
 	
 	/**
 	 * Constructor:  Sets up this path position to be at the start

@@ -1,6 +1,6 @@
 package game.entity ;
 
-import game.PathPosition ;
+import game.path.PathPosition;
 
 /**
  * This class creates a single alien enemy

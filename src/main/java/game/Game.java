@@ -16,6 +16,7 @@ import game.entity.Comet;
 import game.entity.Enemy;
 import game.entity.Sun;
 import game.entity.Tower;
+import game.path.PathPoints;
 
 /* The class begins below the enum. */
 

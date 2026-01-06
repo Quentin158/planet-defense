@@ -3,7 +3,7 @@ package game.entity ;
 import java.awt.Graphics ;
 
 import game.Coordinate ;
-import game.PathPosition ;
+import game.path.PathPosition;
 
 /**
  * This is an abstract superclass for an enemy in the game
