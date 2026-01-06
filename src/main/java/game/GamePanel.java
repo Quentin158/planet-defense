@@ -8,14 +8,10 @@ import java.awt.* ;
  */
 public class GamePanel extends Panel
 {
-	/* Static variables */
-	
-	/* This static variable is just to avoid an Eclipse warning.  It serves no other purpose (for us). */
-	
 	private static final long serialVersionUID = -266426690684141363L ;
-		
-	/* Object fields and methods */
 	
+	private static final Dimension PANEL_SIZE = new Dimension(800,600) ;
+
 	private Game enclosingGame ;  				// A reference back to the Game object that created 'this' object.
 	
 	/**
@@ -45,15 +41,18 @@ public class GamePanel extends Panel
 		enclosingGame.draw(g) ;
 	}
 	
-	/* Overridden methods that report the correct panel size when needed. */
-	
+	@Override
 	public Dimension getMinimumSize () {
-		return new Dimension(800,600) ;
+		return PANEL_SIZE ;
 	}
+
+	@Override
 	public Dimension getMaximumSize () {
-		return new Dimension(800,600) ;
+		return PANEL_SIZE ;
 	}
+
+	@Override
 	public Dimension getPreferredSize () {
-		return new Dimension(800,600) ;
+		return PANEL_SIZE ;
 	}
 }
