@@ -1,1 +1,19 @@
+= Cahier de tests
 
+== Hérite de enemy
+
+|===
+.2+| Objet       3+| Résultats attendus         .2+| RÉSULTAT
+| velocity | anchorX | anchorY
+| Comet         | 8        | -25     | -25     | OK
+| Alien         | 6        | -20     | -20     | OK
+| Asteroid         | 2        | -20     | -20     | OK
+|===
+
+== Hérite de tower
+|===
+.2+| Objet       2+| Résultats attendus         .2+| RÉSULTAT
+| anchorX | anchorY
+| BlackHole        | -40     | -40     | OK
+| Sun        | -50     | -50     | OK
+|===

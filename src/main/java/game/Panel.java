@@ -1,41 +1,65 @@
-package game;
+package game ;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent ;
+import java.awt.event.MouseListener ;
+import java.awt.event.MouseMotionListener ;
 
-import javax.swing.JApplet;
+import javax.swing.JPanel ;
 
-public class Panel extends JApplet implements MouseListener
+public class Panel extends JPanel implements MouseListener, MouseMotionListener
 {
+	public Coordinate mouseCoordinates = new Coordinate(0, 0) ;
+	public boolean mouseIsPressed ;
+
+	public Panel() {
+		this.addMouseListener(this) ; 				// Listen to our own mouse events.
+		this.addMouseMotionListener(this) ;		// Listen to mouse movements
+	}
+
+	/* MouseListener methods */
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseClicked(MouseEvent e) {
+		updateMousePosition(e) ;
+		mouseIsPressed = true ;
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseEntered(MouseEvent e) {
+		updateMousePosition(e) ;
+		mouseIsPressed = false ;
 	}
 
 	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseExited(MouseEvent e) {
+		updateMousePosition(e) ;
+		mouseIsPressed = false ;
 	}
 
 	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseDragged(MouseEvent e) {	
+		updateMousePosition(e) ;
+		mouseIsPressed = false ;
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseMoved(MouseEvent e) {
+		updateMousePosition(e) ;
+		mouseIsPressed = false ;
 	}
 
+	@Override
+	public void mousePressed(MouseEvent e) {
+		mouseIsPressed = true ;
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		mouseIsPressed = true ;
+	}
+
+	private void updateMousePosition(MouseEvent e) {
+		this.mouseCoordinates.setX(e.getX()) ;
+		this.mouseCoordinates.setY(e.getY()) ;
+	}
 }

@@ -480,20 +480,20 @@ public class Game implements Runnable
     	/* I need to make it so you can't place towers on path or off the screen */
     	
     	 // variable to hold mouse location
-    	Coordinate mouseLocation = new Coordinate(gamePanel.mouseX, gamePanel.mouseY);
+    	Coordinate mouseLocation = new Coordinate(gamePanel.mouseCoordinates.getX(), gamePanel.mouseCoordinates.getY());
     	
     	// moves the tower object as mouse moves
-    	if(gamePanel.mouseX > 650 && gamePanel.mouseX < 750 && 
-    		gamePanel.mouseY > 250 && gamePanel.mouseY < 350 && 
+    	if(gamePanel.mouseCoordinates.getX() > 650 && gamePanel.mouseCoordinates.getX() < 750 && 
+    		gamePanel.mouseCoordinates.getY() > 250 && gamePanel.mouseCoordinates.getY() < 350 && 
     		gamePanel.mouseIsPressed && scoreCounter >= 100)
     	{	// if mouse is pressed on tower icon, create a new object
 	    		placingBlackHole = true;
 	    		newBlackHole = new BlackHole(mouseLocation);
     	}    
-    	else if(gamePanel.mouseX > 0 && gamePanel.mouseX < 600 && 
-        	gamePanel.mouseY > 0 && gamePanel.mouseY < 600 && 
+    	else if(gamePanel.mouseCoordinates.getX() > 0 && gamePanel.mouseCoordinates.getX() < 600 && 
+        	gamePanel.mouseCoordinates.getY() > 0 && gamePanel.mouseCoordinates.getY() < 600 && 
         	gamePanel.mouseIsPressed && placingBlackHole
-        	&& line.distanceToPath(gamePanel.mouseX, gamePanel.mouseY) > 60)
+        	&& line.distanceToPath(gamePanel.mouseCoordinates.getX(), gamePanel.mouseCoordinates.getY()) > 60)
     	{	// if mouse is pressed on game screen, place tower on game screen
 	    		newBlackHole.setPosition(mouseLocation);
 	    		towers.add(new BlackHole(mouseLocation));
@@ -516,21 +516,21 @@ public class Game implements Runnable
     {
     	/* I need to make it so you can't place towers on path or off the screen */
     	
-    	 // variable to hold mouse location
-    	Coordinate mouseLocation = new Coordinate(gamePanel.mouseX, gamePanel.mouseY);
+    	// variable to hold mouse location
+    	Coordinate mouseLocation = new Coordinate(gamePanel.mouseCoordinates.getX(), gamePanel.mouseCoordinates.getY());
     	
     	// moves the tower object as mouse moves
-    	if(gamePanel.mouseX > 650 && gamePanel.mouseX < 750 && 
-    		gamePanel.mouseY > 400 && gamePanel.mouseY < 500 && 
+    	if(gamePanel.mouseCoordinates.getX()> 650 && gamePanel.mouseCoordinates.getX() < 750 && 
+    		gamePanel.mouseCoordinates.getY() > 400 && gamePanel.mouseCoordinates.getY() < 500 && 
     		gamePanel.mouseIsPressed && scoreCounter >= 300)
     	{	// if mouse is pressed on tower icon, create a new object
 	    		placingSun = true;
 	    		newSun = new Sun(mouseLocation);
     	}    
-    	else if(gamePanel.mouseX > 0 && gamePanel.mouseX < 600 && 
-        	gamePanel.mouseY > 0 && gamePanel.mouseY < 600 && 
+    	else if(gamePanel.mouseCoordinates.getX() > 0 && gamePanel.mouseCoordinates.getX() < 600 && 
+        	gamePanel.mouseCoordinates.getY() > 0 && gamePanel.mouseCoordinates.getY() < 600 && 
         	gamePanel.mouseIsPressed && placingSun
-        	&& line.distanceToPath(gamePanel.mouseX, gamePanel.mouseY) > 60)
+        	&& line.distanceToPath(gamePanel.mouseCoordinates.getX(), gamePanel.mouseCoordinates.getY()) > 60)
     	{	// if mouse is pressed on game screen, place tower on game screen
 	    		newSun.setPosition(mouseLocation);
 	    		towers.add(new Sun(mouseLocation));

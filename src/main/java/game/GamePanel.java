@@ -1,31 +1,22 @@
-package game;
+package game ;
 
-import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-
-import javax.swing.JPanel;
+import java.awt.* ;
 
 /**
  * The GamePanel class represents the drawable area on the screen.
  * This class is kept simple, and can be used as-is.
  */
-public class GamePanel extends JPanel implements MouseListener, MouseMotionListener
+public class GamePanel extends Panel
 {
 	/* Static variables */
 	
 	/* This static variable is just to avoid an Eclipse warning.  It serves no other purpose (for us). */
 	
-	private static final long serialVersionUID = -266426690684141363L;
-	
+	private static final long serialVersionUID = -266426690684141363L ;
 		
 	/* Object fields and methods */
 	
-	private Game enclosingGame;  	// A reference back to the Game object that created 'this' object.
-	public int mouseX;				// Tracks X position of mouse events
-	public int mouseY;				// Tracks Y position of mouse events
-	public boolean mouseIsPressed;	// Determines if mouse has been clicked or not
+	private Game enclosingGame ;  				// A reference back to the Game object that created 'this' object.
 	
 	/**
 	 * Creates the GamePanel object (which is really just
@@ -36,14 +27,9 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 	 * 
 	 * @param enclosingGame the Game object that is creating this panel
 	 */
-	public GamePanel (Game enclosingGame)
-	{
-			// Keep track of the Game object that created this panel.
-			//   That way, we can call methods in the game object when needed.
-		
-		this.addMouseListener(this); 			// Listen to our own mouse events.
-		this.addMouseMotionListener(this);		// Listen to mouse movements
-			this.enclosingGame = enclosingGame;
+	public GamePanel (Game enclosingGame) {
+		super() ;
+		this.enclosingGame = enclosingGame ;
 	}
 	
 	/**
@@ -55,77 +41,19 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 	 * 
 	 * @param g  the Graphics object that corresponds to the panel
 	 */
-	public void paintComponent (Graphics g)
-	{
-			enclosingGame.draw (g);
-	}
-	
-	/**
-	 * returns X & Y coordinates of mouse
-	 * 
-	 * @return
-	 */
-	public Coordinate getCoordinate()
-	{
-		return new Coordinate(mouseX, mouseY);
+	public void paintComponent (Graphics g) {
+		enclosingGame.draw(g) ;
 	}
 	
 	/* Overridden methods that report the correct panel size when needed. */
 	
 	public Dimension getMinimumSize () {
-			return new Dimension(800,600);
+		return new Dimension(800,600) ;
 	}
 	public Dimension getMaximumSize () {
-			return new Dimension(800,600);
+		return new Dimension(800,600) ;
 	}
 	public Dimension getPreferredSize () {
-			return new Dimension(800,600);
-	}
-
-	/* MouseListener methods */
-    
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		updateMousePosition(e) ;
-		mouseIsPressed = true ;
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		updateMousePosition(e) ;
-		mouseIsPressed = false ;
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		updateMousePosition(e) ;
-		mouseIsPressed = false ;
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent e) {	
-		updateMousePosition(e) ;
-		mouseIsPressed = false ;
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		updateMousePosition(e) ;
-		mouseIsPressed = false ;
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		mouseIsPressed = true ;
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		mouseIsPressed = true ;
-	}
-
-	private void updateMousePosition(MouseEvent e) {
-		this.mouseX = e.getX() ;
-		this.mouseY = e.getY() ;
+		return new Dimension(800,600) ;
 	}
 }

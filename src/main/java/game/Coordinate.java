@@ -37,6 +37,22 @@ public class Coordinate
 	public int getY() {
 		return this.y ;
 	}
+
+	/**
+	 * Sets X coordinate.
+	 * @param x
+	 */
+	public void setX(int x) {
+		this.x = x ;
+	}
+
+	/**
+	 * Sets Y coordinate.
+	 * @param y
+	 */
+	public void setY(int y) {
+		this.y = y ;
+	}
 	
 	@Override
 	public String toString() {
