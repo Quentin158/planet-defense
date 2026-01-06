@@ -1,9 +1,8 @@
 = Cahier de tests
 
 == Hérite de enemy
-
 |===
-.2+| Objet       3+| Résultats attendus         .2+| RÉSULTAT
+.2+| Objet       3+| Résultats attendus         .2+| Résultat obtenu
 | velocity | anchorX | anchorY
 | Comet         | 8        | -25     | -25     | OK
 | Alien         | 6        | -20     | -20     | OK
@@ -12,8 +11,17 @@
 
 == Hérite de tower
 |===
-.2+| Objet       2+| Résultats attendus         .2+| RÉSULTAT
+.2+| Objet       2+| Résultats attendus         .2+| Résultat obtenu
 | anchorX | anchorY
 | BlackHole        | -40     | -40     | OK
 | Sun        | -50     | -50     | OK
+|===
+
+== `GamePanel`` size
+|===
+.2+| Attribut 2+| Résultats attendus         .2+| Résultat obtenu
+| `width` | `height`
+| Minimum Size   | 800     | 600     | OK
+| Preferred Size | 800     | 600     | OK
+| Maximum Size   | 800     | 600     | OK
 |===
